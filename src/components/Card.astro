@@ -1,0 +1,104 @@
+---
+/* const imageSrc = "../public/Ben-böhmer.png";
+const eventName = "KARRUSEL";
+const eventDate = "29-09-2024"; */
+
+const artists = await fetch("https://dhkslhjolltfgybkbynh.supabase.co").then(
+  (res) => res.json()
+);
+console.log(artists);
+---
+
+{
+  artists.map((artist) => (
+    <div class="container">
+      <div class="background-box" />
+      <div class="image-wrapper">
+        <img class="image" src={artist.og_image.url} />
+      </div>
+      <div class="image-border" />
+      <div class="date-text">{artist.date}</div>
+      <div class="title-text">{artist.title}</div>
+    </div>
+  ))
+}
+<!-- <div class="container">
+  <div class="background-box"></div>
+  <div class="image-wrapper">
+    <img class="image" src={imageSrc} />
+  </div>
+  <div class="image-border"></div>
+  <div class="date-text">29-09-2024</div>
+  <div class="title-text">BEN BöHMER</div>
+</div> -->
+<style>
+  .container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .background-box {
+    width: 427px;
+    height: 354px;
+    position: absolute;
+    background: #151515;
+    border-radius: 15px;
+    border: 0.5px white solid;
+  }
+
+  .image-wrapper {
+    width: 412px;
+    height: 332px;
+    position: absolute;
+    left: 8px;
+    top: 13px;
+  }
+
+  .image {
+    width: 412px;
+    height: 332px;
+    border-radius: 15px;
+    position: absolute;
+  }
+
+  .image-border {
+    width: 412px;
+    height: 331px;
+    position: absolute;
+    left: 7px;
+    top: 13px;
+    border-radius: 15px;
+    border: 0.5px white solid;
+  }
+
+  .date-text,
+  .title-text {
+    position: absolute;
+    color: white;
+
+    font-weight: 300;
+    letter-spacing: 0.4px;
+    word-wrap: break-word;
+  }
+
+  .date-text {
+    font-size: 15px;
+    font-family: "IBM Plex Mono", monospace;
+    width: 112px;
+    height: 23px;
+    left: 266px;
+    top: 320px;
+  }
+
+  .title-text {
+    font-size: 25px;
+    font-family: "IBM Plex Mono", monospace;
+    background-color: black;
+    width: 150 px;
+    height: 23px;
+    left: 160px;
+    top: 5px;
+  }
+</style>
