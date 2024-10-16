@@ -1,7 +1,9 @@
 ---
-import Article from "./components/Buttons/Lineup.astro";
+import Article from "./components/Buttons/Article.astro";
 import Back from "./components/Buttons/Back.astro";
-import Lineup from "./components/Buttons/Article.astro";
+import Lineup from "./components/Buttons/Lineup.astro";
+
+/* Javascript */
 ---
 
 <html lang="en">
@@ -11,22 +13,78 @@ import Lineup from "./components/Buttons/Article.astro";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
+    <link rel="stylesheet" href="./styles/global.css" />
   </head>
   <body>
     <div class="frontpage-container">
-      <img src="./Images/alt.png" alt="Grid" />
+      <img class="grid" src="./Images/alt.png" alt="Grid" />
       <img class="dato" src="./Images/dato.png" alt="Dato for festival" />
       <img class="hero" src="./Images/hero.png" alt="Overskrift" />
       <div class="lineup-container">
         <Lineup />
-        <img src="./Images/news" alt="news" />
       </div>
+      <img class="news" src="./Images/news.png" alt="news" />
     </div>
+    <h1>Header</h1>
+    <div class="grid-header">
+      <img
+        src="./img/android-chrome-192x192.png"
+        alt="Logo"
+        width="50px"
+        height="50px"
+      />
+      <h1 class="TS-Header">Tech & Story Lab</h1>
+    </div>
+    <section id="categorylist">
+      <h1 class="category-head">KATEGORIER</h1>
+      <template id="category-template"
+        ><li class="category-item">
+          <a href="listeview.astro">Accessories</a>
+        </li></template
+      >
+      <ol class="flex-container"></ol>
+    </section>
+    <div class="pil-wrapper">
+      <a href="index.html"
+        ><!-- <img
+          class="pil"
+          src="./img/right-arrow.png"
+          alt="backspace pil"
+          width="60"
+        /> --></a
+      >
+    </div>
+    <h1 class="categoryHeader">Audio/Photo/Video Equipment</h1>
+    <div class="wrap-mainText">
+      <h2 class="mainText">
+        Her finder du alt lige fra forskellige kameraer, objektiver og
+        stabilisatorer til diverse tripods, mikrofoner og lysudstyr. Hvad enten
+        du er på udkig efter grej til fx portræt- og produktbilleder, interviews
+        eller podcasts, har vi alt, du har brug for.
+      </h2>
+    </div>
+    <h2 class="subHeader">Products</h2>
+    <section id="productListSection"></section>
+    <template id="second">
+      <article class="smallProduct">
+        <!--         <a class="read-more-img" href="product.html" class="Linked"> -->
+        <p class="topHead">Bing Bong</p>
+        <!--         <img src="" alt="hej" /> -->
+        <p class="subtle">
+          <span class="type">Tshirts </span> | <span class="brand">Nike</span>
+        </p>
+        <!--         <a class="read-more" href="product.html"
+          >Her kan du læse en beskrivelse af hvert produkt, så du kan få et
+          indblik i om du er interreseret i at låne udstyret.</a
+        > -->
+      </article>
+    </template>
   </body>
+  <script src="./java/productlist.js"></script>
 </html>
 
 <style>
-  img {
+  .grid {
     width: 100%;
     height: 100vh;
   }
@@ -57,8 +115,17 @@ import Lineup from "./components/Buttons/Article.astro";
 
   .lineup-container {
     top: 60%;
-    left: 35%;
+    left: 42%;
     z-index: 10;
     position: absolute;
+  }
+
+  .news {
+    top: 91.2%;
+    left: 10%;
+    z-index: 10;
+    position: absolute;
+    width: 80%;
+    height: auto;
   }
 </style>
