@@ -12,7 +12,7 @@ function init() {
   if (category) {
     url = `https://dhkslhjolltfgybkbynh.supabase.co/rest/v1/info?select=artist&artist=eq.${category}`;
   } else {
-    url = `https://dhkslhjolltfgybkbynh.supabase.co/rest/v1/info?select=artist`; // Fetch all artists
+    url = `https://dhkslhjolltfgybkbynh.supabase.co/rest/v1/info`; // Fetch all artists
   }
 
   console.log(url);
@@ -39,6 +39,9 @@ function showProduct(product) {
 
   const clone = productTemplate.cloneNode(true);
   clone.querySelector(".topHead").textContent = product.artist;
+  clone.querySelector(".subtle").textContent = product.scene
+  clone.querySelector(".dato").textContent = product.dato
+  clone.querySelector("").src = 
 
   productList.appendChild(clone);
 }
