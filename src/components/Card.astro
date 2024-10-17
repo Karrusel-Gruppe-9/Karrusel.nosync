@@ -1,27 +1,43 @@
 ---
+import "../styles/global.css";
 /* const imageSrc = "../public/Ben-böhmer.png";
 const eventName = "KARRUSEL";
 const eventDate = "29-09-2024"; */
 
-const artists = await fetch("https://dhkslhjolltfgybkbynh.supabase.co").then(
-  (res) => res.json()
-);
-console.log(artists);
+/* const artister = await fetch(
+  "https://fetch-with-astro.netlify.app/api/artists"
+).then((res) => res.json());
+console.log(artister); */
+
+const key = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRoa3NsaGpvbGx0Zmd5YmtieW5oIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjg2MzUxMzAsImV4cCI6MjA0NDIxMTEzMH0.PdB3A9RoMZHik4jSgDicx6j1dUshJkVYhVKMvgRPmK0`;
+
+const artister = await fetch(
+  "https://dhkslhjolltfgybkbynh.supabase.co/rest/v1/",
+  {
+    method: "GET",
+    headers: {
+      apikey: key,
+    },
+  }
+).then((res) => res.json());
+console.log(artister);
 ---
 
-{
-  artists.map((artist) => (
-    <div class="container">
-      <div class="background-box" />
-      <div class="image-wrapper">
-        <img class="image" src={artist.og_image.url} />
+<div class="grid-container">
+  {
+    artister.map((artist) => (
+      <div class="container">
+        <div class="background-box" />
+        <div class="image-wrapper">
+          <img class="image" src={artist.og_image.url} />
+        </div>
+        <div class="image-border" />
+        <div class="date-text">{artist.date}</div>
+        <div class="title-text">{artist.title}</div>
       </div>
-      <div class="image-border" />
-      <div class="date-text">{artist.date}</div>
-      <div class="title-text">{artist.title}</div>
-    </div>
-  ))
-}
+    ))
+  }
+</div>
 <!-- <div class="container">
   <div class="background-box"></div>
   <div class="image-wrapper">
@@ -32,6 +48,12 @@ console.log(artists);
   <div class="title-text">BEN BöHMER</div>
 </div> -->
 <style>
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 100px;
+    justify-items: center;
+  }
   .container {
     display: flex;
     width: 100%;
