@@ -4,12 +4,12 @@ import "../styles/global.css";
 const eventName = "KARRUSEL";
 const eventDate = "29-09-2024"; */
 
-/* const artister = await fetch(
+const artister = await fetch(
   "https://fetch-with-astro.netlify.app/api/artists"
 ).then((res) => res.json());
-console.log(artister); */
+console.log(artister);
 
-const key = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRoa3NsaGpvbGx0Zmd5YmtieW5oIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjg2MzUxMzAsImV4cCI6MjA0NDIxMTEzMH0.PdB3A9RoMZHik4jSgDicx6j1dUshJkVYhVKMvgRPmK0`;
+/* const key = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRoa3NsaGpvbGx0Zmd5YmtieW5oIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjg2MzUxMzAsImV4cCI6MjA0NDIxMTEzMH0.PdB3A9RoMZHik4jSgDicx6j1dUshJkVYhVKMvgRPmK0`;
 
 const artister = await fetch(
   "https://dhkslhjolltfgybkbynh.supabase.co/rest/v1/",
@@ -20,7 +20,7 @@ const artister = await fetch(
     },
   }
 ).then((res) => res.json());
-console.log(artister);
+console.log(artister); */
 ---
 
 <div class="grid-container">
@@ -28,9 +28,11 @@ console.log(artister);
     artister.map((artist) => (
       <div class="container">
         <div class="background-box" />
+
         <div class="image-wrapper">
           <img class="image" src={artist.og_image.url} />
         </div>
+
         <div class="image-border" />
         <div class="date-text">{artist.date}</div>
         <div class="title-text">{artist.title}</div>
@@ -49,12 +51,15 @@ console.log(artister);
 </div> -->
 <style>
   .grid-container {
+    margin-top: 10%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 200px;
   }
   .container {
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
     position: relative;
@@ -73,8 +78,21 @@ console.log(artister);
     width: 206px;
     height: 166px;
     position: absolute;
-    left: 8px;
-    top: 13px;
+    overflow: hidden;
+    border: 0.5px white solid;
+    border-radius: 15px;
+    clip-path: polygon(
+      65% 12%,
+      79% 3%,
+      98% 3%,
+      98% 91%,
+      69% 91%,
+      51% 96%,
+      2% 96%,
+      2% 3%,
+      19% 3%,
+      41% 12%
+    );
   }
 
   .image {
@@ -82,16 +100,26 @@ console.log(artister);
     height: 166px;
     border-radius: 15px;
     position: absolute;
+    clip-path: polygon(
+      65% 12%,
+      79% 3%,
+      98% 3%,
+      98% 91%,
+      69% 91%,
+      51% 96%,
+      2% 96%,
+      2% 3%,
+      19% 3%,
+      41% 12%
+    );
   }
 
   .image-border {
     width: 206px;
     height: 166px;
     position: absolute;
-    left: 7px;
-    top: 13px;
+
     border-radius: 15px;
-    border: 0.5px white solid;
   }
 
   .date-text,
@@ -108,8 +136,6 @@ console.log(artister);
     font-family: "IBM Plex Mono", monospace;
     width: 56px;
     height: 11.5px;
-    left: 133px;
-    top: 160px;
   }
 
   .title-text {
@@ -119,7 +145,5 @@ console.log(artister);
     justify-content: center;
     width: px;
     height: 23px;
-    left: 80px;
-    top: 5px;
   }
 </style>
