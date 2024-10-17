@@ -41,7 +41,7 @@ function showProduct(product) {
   clone.querySelector(".topHead").textContent = product.artist;
   clone.querySelector(".subtle").textContent = product.scene
   clone.querySelector(".dato").textContent = product.dato
-  clone.querySelector("").src = 
+  clone.querySelector("img").src = product.img
 
   productList.appendChild(clone);
 }

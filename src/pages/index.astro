@@ -151,6 +151,17 @@ import Lineup from "./components/Buttons/Lineup.astro";
         </div>
       </div>
     </div>
+    <div class="sign-container">
+      <div class="grid-1">
+        <h1>NEWS SIGN UP</h1>
+        <p>Sign up for relevant info, artist news and special offers</p>
+        <form action="email">Email</form>
+        <button>Sign-up</button>
+      </div>
+      <div class="grid-2">
+        <img src="./Images/signup-right.png" alt="Sign-up Billede" />
+      </div>
+    </div>
   </body>
   <script src="./java/productlist.js"></script>
 </html>
@@ -226,6 +237,7 @@ import Lineup from "./components/Buttons/Lineup.astro";
     transform-style: preserve-3d;
     flex-direction: column;
     margin-bottom: 200px;
+    margin-top: 200px;
   }
 
   .cards {
@@ -399,6 +411,12 @@ import Lineup from "./components/Buttons/Lineup.astro";
     transform: translate3d(70%, 0, -220px);
     --current-color1: #eceaed;
     --current-color2: #404457;
+  }
+
+  /* Sign-up */
+
+  .sign-container {
+    border: 1px solid white;
   }
 </style>
 
