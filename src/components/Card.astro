@@ -27,11 +27,9 @@ console.log(artister);
     artister.map((artist) => (
       <div class="container">
         <div class="background-box" />
-
         <div class="image-wrapper">
           <img class="image" src={artist.img} />
         </div>
-
         <div class="image-border" />
         <div class="date-text">Manegen 18:00</div>
         <div class="title-text">{artist.artist}</div>
@@ -39,27 +37,19 @@ console.log(artister);
     ))
   }
 </div>
-<!-- <div class="container">
-  <div class="background-box"></div>
-  <div class="image-wrapper">
-    <img class="image" src={imageSrc} />
-  </div>
-  <div class="image-border"></div>
-  <div class="date-text">29-09-2024</div>
-  <div class="title-text">BEN BöHMER</div>
-</div> -->
+
 <style>
   .grid-container {
     margin-top: 10%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 200px;
+    gap: 150px;
   }
   .container {
     display: flex;
-    flex-direction: column; /* Gør containeren lodret */
-    justify-content: space-between; /* Fordeler pladsen mellem børnene */
-    align-items: center; /* Centrerer horisontalt */
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
     width: 100%;
     height: 100%;
@@ -78,7 +68,6 @@ console.log(artister);
     height: 332px;
     position: absolute;
     overflow: hidden;
-    border: 0.5px white solid;
     border-radius: 15px;
     clip-path: polygon(
       77% 12%,
@@ -136,8 +125,8 @@ console.log(artister);
     letter-spacing: 0.4px;
     font-size: 30px;
     font-family: "IBM Plex Mono", monospace;
-    text-align: center; /* Centrerer teksten horisontalt */
-    position: absolute; /* Gør det muligt at placere den ovenfor */
-    top: 10px; /* Juster dette for at placere den tættere på toppen */
+    text-align: center;
+    position: absolute;
+    top: 10px;
   }
 </style>
