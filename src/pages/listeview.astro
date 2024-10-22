@@ -1,21 +1,34 @@
 ---
 import "../styles/global.css";
 import Card from "../components/Card.astro";
-import Back from "../components/Back.astro";
+import Back from "../components/Button.astro";
 import Navigation from "../components/Navigation.astro";
 import MainLayout from "../layout/MainLayout.astro";
 ---
 
 <MainLayout />
 <div class="headline">
-  <Back />
+  <div class="back-button">
+    <Back />
+  </div>
   <h1>LINE-UP</h1>
+</div>
+<div class="dates">
+  <h2>THURSDAY</h2>
+  <h2>FRIDAY</h2>
+  <h2>SATURDAY</h2>
 </div>
 <Card />
 <Card />
 <Card />
 
 <style>
+  .back-button {
+    display: flex;
+    left: 0;
+    position: absolute;
+    margin: 30px;
+  }
   .headline {
     display: flex;
     align-items: center;
@@ -25,5 +38,17 @@ import MainLayout from "../layout/MainLayout.astro";
   h1 {
     color: white;
     margin: 0;
+    font-family: Warpen, sans-serif;
+    color: #ba33ff;
+    font-size: 60px;
+  }
+
+  .dates {
+    display: flex;
+    color: white;
+    margin-top: 75px;
+    gap: 100px;
+    font-family: Warpen, sans-serif;
+    justify-content: center;
   }
 </style>
