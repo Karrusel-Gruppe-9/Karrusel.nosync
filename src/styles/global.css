@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /** @format */
 
 * {
@@ -8,7 +8,7 @@
 body {
   background-color: black;
 }
-=======
+
 @font-face {
     font-family: 'Warpen';
     src: url('../pages/Fonts/Warpen.otf') format('otf'),
@@ -16,5 +16,3 @@ body {
     font-weight: normal;
     font-style: normal;
   }
-
->>>>>>> Rasmus
