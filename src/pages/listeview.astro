@@ -2,23 +2,36 @@
 import "../styles/global.css";
 import Card from "../components/Card.astro";
 import Navigation from "../components/Navigation.astro";
+import MainLayout from "../layout/MainLayout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/karrusel-logo.png" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <Navigation />
-    <h1>LINE-UP</h1>
-    <main>
-      <Card />
-    </main>
-  </body>
-</html>
+<MainLayout />
+<div class="headline">
+  <img class="back-button" src="../public/karrusel-logo.png" alt="" />
+  <h1>LINE-UP</h1>
+</div>
+<Card />
+<Card />
+<Card />
 
-<style></style>
+<style>
+  .headline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  h1 {
+    color: white;
+    margin: 0;
+  }
+
+  .back-button {
+    position: absolute;
+    left: 0; /* Placerer knappen i venstre hjørne */
+    background-color: #f0f0f0;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+</style>
