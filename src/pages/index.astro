@@ -1,18 +1,181 @@
 ---
-
+import "../styles/global.css";
+import Card from "../components/Card.astro";
+import Navigation from "../components/Navigation.astro";
+import Article from "./components/Buttons/Article.astro";
+import Back from "./components/Buttons/Back.astro";
+import Lineup from "./components/Buttons/Lineup.astro";
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/karrusel-logo.png" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
   <body>
+    <Navigation />
     <h1>Astro</h1>
+    <main>
+      <Card />
+      <div class="frontpage-container">
+        <img class="grid" src="./Images/alt.png" alt="Grid" />
+        <img class="dato" src="./Images/dato.png" alt="Dato for festival" />
+        <img class="hero" src="./Images/hero.png" alt="Overskrift" />
+        <div class="lineup-container">
+          <Lineup />
+        </div>
+        <img class="news" src="./Images/news.png" alt="news" />
+      </div>
+      <h1>Header</h1>
+      <div class="sliderContainer">
+        <div class="container">
+          <input type="radio" name="slider" id="s1" checked />
+          <input type="radio" name="slider" id="s2" />
+          <input type="radio" name="slider" id="s3" />
+          <input type="radio" name="slider" id="s4" />
+          <input type="radio" name="slider" id="s5" />
+
+          <div class="cards">
+            <label for="s1" id="slide1">
+              <div class="card">
+                <div class="image">
+                  <img src="./Images/pic1.jpg" alt="Nyheder" />
+                  <div class="dots">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                </div>
+                <div class="infos">
+                  <span class="name">Navn</span>
+                  <span class="lorem"
+                    >Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Pariatur assumenda expedita eum voluptas repellendus ipsa
+                    quis iusto, distinctio quas aspernatur corrupti cum
+                    sapiente. Facilis, laudantium ipsa. Laborum ducimus tempora
+                    quidem.</span
+                  >
+                  <a href="/details" class="btn-details">details</a>
+                  <div class="actions"></div>
+                </div>
+              </div>
+            </label>
+            <label for="s2" id="slide2">
+              <div class="card">
+                <div class="image">
+                  <img src="./Images/pic2.jpg" alt="Nyheder" />
+                  <div class="dots">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                </div>
+                <div class="infos">
+                  <span class="name">Navn</span>
+                  <span class="lorem"
+                    >Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Pariatur assumenda expedita eum voluptas repellendus ipsa
+                    quis iusto, distinctio quas aspernatur corrupti cum
+                    sapiente. Facilis, laudantium ipsa. Laborum ducimus tempora
+                    quidem.</span
+                  >
+                  <a href="/details" class="btn-details">details</a>
+                  <div class="actions"></div>
+                </div>
+              </div>
+            </label>
+            <label for="s3" id="slide3">
+              <div class="card">
+                <div class="image">
+                  <img src="./Images/pic3.jpg" alt="Nyheder" />
+                  <div class="dots">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                </div>
+                <div class="infos">
+                  <span class="name">Navn</span>
+                  <span class="lorem"
+                    >Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Pariatur assumenda expedita eum voluptas repellendus ipsa
+                    quis iusto, distinctio quas aspernatur corrupti cum
+                    sapiente. Facilis, laudantium ipsa. Laborum ducimus tempora
+                    quidem.</span
+                  >
+                  <a href="/details" class="btn-details">details</a>
+                  <div class="actions"></div>
+                </div>
+              </div>
+            </label>
+            <label for="s4" id="slide4">
+              <div class="card">
+                <div class="image">
+                  <img src="./Images/pic4.jpg" alt="Nyheder" />
+                  <div class="dots">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                </div>
+                <div class="infos">
+                  <span class="name">Navn</span>
+                  <span class="lorem"
+                    >Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Pariatur assumenda expedita eum voluptas repellendus ipsa
+                    quis iusto, distinctio quas aspernatur corrupti cum
+                    sapiente. Facilis, laudantium ipsa. Laborum ducimus tempora
+                    quidem.</span
+                  >
+                  <a href="/details" class="btn-details">details</a>
+                  <div class="actions"></div>
+                </div>
+              </div>
+            </label>
+            <label for="s5" id="slide5">
+              <div class="card">
+                <div class="image">
+                  <img src="./Images/pic5.jpg" alt="Nyheder" />
+                  <div class="dots">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                </div>
+                <div class="infos">
+                  <span class="name">Navn</span>
+                  <span class="lorem"
+                    >Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Pariatur assumenda expedita eum voluptas repellendus ipsa
+                    quis iusto, distinctio quas aspernatur corrupti cum
+                    sapiente. Facilis, laudantium ipsa. Laborum ducimus tempora
+                    quidem.</span
+                  >
+                  <a href="/details" class="btn-details">details</a>
+                  <div class="actions"></div>
+                </div>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="sign-container">
+        <div class="grid-1">
+          <h1>NEWS SIGN UP</h1>
+          <p>Sign up for relevant info, artist news and special offers</p>
+          <form action="email">Email</form>
+          <button>Sign-up</button>
+        </div>
+        <div class="grid-2">
+          <img src="./Images/signup-right.png" alt="Sign-up Billede" />
+        </div>
+      </div>
+    </main>
   </body>
+  <script src="./java/productlist.js"></script>
 </html>
 
 <style>
