@@ -15,11 +15,6 @@
         <div class="card">
           <div class="image">
             <img src="./Images/pic1.jpg" alt="Nyheder" />
-            <div class="dots">
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
           </div>
           <div class="infos">
             <span class="name">Navn</span>
@@ -29,8 +24,6 @@
               distinctio quas aspernatur corrupti cum sapiente. Facilis,
               laudantium ipsa. Laborum ducimus tempora quidem.</span
             >
-            <a href="/details" class="btn-details">details</a>
-            <div class="actions"></div>
           </div>
         </div>
       </label>
@@ -38,11 +31,6 @@
         <div class="card">
           <div class="image">
             <img src="./Images/pic2.jpg" alt="Nyheder" />
-            <div class="dots">
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
           </div>
           <div class="infos">
             <span class="name">Navn</span>
@@ -52,8 +40,6 @@
               distinctio quas aspernatur corrupti cum sapiente. Facilis,
               laudantium ipsa. Laborum ducimus tempora quidem.</span
             >
-            <a href="/details" class="btn-details">details</a>
-            <div class="actions"></div>
           </div>
         </div>
       </label>
@@ -61,11 +47,6 @@
         <div class="card">
           <div class="image">
             <img src="./Images/pic3.jpg" alt="Nyheder" />
-            <div class="dots">
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
           </div>
           <div class="infos">
             <span class="name">Navn</span>
@@ -75,8 +56,6 @@
               distinctio quas aspernatur corrupti cum sapiente. Facilis,
               laudantium ipsa. Laborum ducimus tempora quidem.</span
             >
-            <a href="/details" class="btn-details">details</a>
-            <div class="actions"></div>
           </div>
         </div>
       </label>
@@ -84,11 +63,6 @@
         <div class="card">
           <div class="image">
             <img src="./Images/pic4.jpg" alt="Nyheder" />
-            <div class="dots">
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
           </div>
           <div class="infos">
             <span class="name">Navn</span>
@@ -98,20 +72,16 @@
               distinctio quas aspernatur corrupti cum sapiente. Facilis,
               laudantium ipsa. Laborum ducimus tempora quidem.</span
             >
-            <a href="/details" class="btn-details">details</a>
-            <div class="actions"></div>
           </div>
         </div>
       </label>
       <label for="s5" id="slide5">
         <div class="card">
+            <div class="card-title">
+                <h1>News</h1>
+            </div>
           <div class="image">
             <img src="./Images/pic5.jpg" alt="Nyheder" />
-            <div class="dots">
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
           </div>
           <div class="infos">
             <span class="name">Navn</span>
@@ -121,8 +91,6 @@
               distinctio quas aspernatur corrupti cum sapiente. Facilis,
               laudantium ipsa. Laborum ducimus tempora quidem.</span
             >
-            <a href="/details" class="btn-details">details</a>
-            <div class="actions"></div>
           </div>
         </div>
       </label>
@@ -164,6 +132,7 @@
     margin-bottom: 20px;
     perspective: 1000px;
     transform-style: preserve-3d;
+    
   }
 
   .cards label {
@@ -174,15 +143,25 @@
     margin: auto;
     cursor: pointer;
     transition: transform 0.55s ease;
+}
+
+.cards .card {
+    background-color: #151515;
+    
+    border-radius: 2rem; */
+    width: 426px;
+    display: inline-block;
+    height: 354px;
+    position: relative;
+    border-radius: 15px;
+    border: 0.5px white solid;
   }
 
-  .cards .card {
-    display: inline-block;
+  .card-title {
+    left: 180px;
+    top: 40px;
     position: relative;
-    height: 100%;
-    background-color: #071b3f;
-    padding: 30px 35px;
-    border-radius: 2rem;
+    color: white;
   }
 
   .cards .image {
@@ -191,40 +170,30 @@
   }
 
   .cards .image img {
-    border-radius: 5px;
-    box-shadow: 15px 15px 40px rgba(0, 0, 0, 50%);
-    margin-top: 23px;
-    width: 86%;
-    height: 220px;
-    object-fit: cover;
     transition: all 0.7s;
+    width: 412px;
+    object-fit: cover;
+    height: 332px;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 15px 15px 40px rgba(0, 0, 0, 50%);
+    clip-path: polygon(
+      77% 12%,
+      82% 3%,
+      98% 3%,
+      98% 90%,
+      58% 90%,
+      44% 96%,
+      2% 96%,
+      2% 3%,
+      18% 3%,
+      23% 12%
+    );
   }
 
   .cards .image img:hover {
     transform: scale(1.05);
-  }
-
-  .cards .image .dots {
-    text-align: center;
-  }
-
-  span .dots {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-  }
-
-  span.dots span:nth-child(1) {
-    background-color: var(--current-color1);
-  }
-
-  span.dots span:nth-child(2) {
-    background-color: #5b85f9;
-  }
-
-  span.dots span:nth-child(3) {
-    background-color: #000;
   }
 
   .card .infos {
