@@ -1,15 +1,19 @@
-* {
-  box-sizing: border-box;
-}
+style is:global {
 
-body {
-  background-color: black;
-}
-
-@font-face {
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: black;
+  }
+  
+  @font-face {
     font-family: 'Warpen';
     src: url('../pages/Fonts/Warpen.otf') format('otf'),
-         url('../pages/Fonts/Warpen.ttf') format('ttf'); /* Fallback for older browsers */
+    url('../pages/Fonts/Warpen.ttf') format('ttf'); /* Fallback for older browsers */
     font-weight: normal;
     font-style: normal;
   }
+  
+}
