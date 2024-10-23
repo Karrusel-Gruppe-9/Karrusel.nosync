@@ -1,44 +1,42 @@
 ---
-import "../styles/global.css"
+import "../styles/global.css";
 ---
 
 <nav class="navbar">
   <ul class="nav-menu">
-
- <div class="circle">
-    <img src="./Images/home 1.png" alt="" class="home-ikon">
-
-    <li class="menu-link">
-      <a href="website.html" class="menu-link">HOME</a>
-    </li>
-    </div>
-    <hr style="border: 1px solid white; width: 100px; margin-top: 10px;">
     <div class="circle">
-    <img src="./Images/microphone-alt 1.png" alt="" class="lineup-ikon">
-    <li class="menu-link">
-      <a href="emnesite.html" class="menu-link">LINE-UP</a>
-    </li>
+      <img src="./Images/home 1.png" alt="" class="home-ikon" />
+
+      <li class="menu-link">
+        <a href="website.html" class="menu-link">HOME</a>
+      </li>
     </div>
-    <hr style="border: 1px solid white; width: 100px; margin-top: 10px;">
+    <hr style="border: 1px solid white; width: 100px; margin-top: 10px;" />
     <div class="circle">
-    <img src="./Images/newspaper 1.png" alt="" class="news-ikon">
-
-    <li class="menu-link">
-      <a href="temaopgave.html" class="menu-link">NEWS</a>
-    </li>
+      <img src="./Images/microphone-alt 1.png" alt="" class="lineup-ikon" />
+      <li class="menu-link">
+        <a href="emnesite.html" class="menu-link">LINE-UP</a>
+      </li>
     </div>
-    <hr style="border: 1px solid white; width: 100px; margin-top: 10px;">
+    <hr style="border: 1px solid white; width: 100px; margin-top: 10px;" />
     <div class="circle">
-    <img src="./Images/user 1.png" alt="" class="login-ikon">
+      <img src="./Images/newspaper 1.png" alt="" class="news-ikon" />
 
-    <li class="menu-link">
-      <a href="passionssite.html" class="menu-link">LOG-IN</a>
-    </li>
+      <li class="menu-link">
+        <a href="temaopgave.html" class="menu-link">NEWS</a>
+      </li>
     </div>
+    <hr style="border: 1px solid white; width: 100px; margin-top: 10px;" />
+    <div class="circle">
+      <img src="./Images/user 1.png" alt="" class="login-ikon" />
 
+      <li class="menu-link">
+        <a href="passionssite.html" class="menu-link">LOG-IN</a>
+      </li>
+    </div>
   </ul>
-<div class="hamburger">
-    <img src="./Images/burgermenuhvid.png" alt="Menu" class="menu-icon">
+  <div class="hamburger">
+    <img src="./Images/burgermenuhvid.png" alt="Menu" class="menu-icon" />
   </div>
   <script src="../pages/burger.js"></script>
 </nav>
@@ -67,31 +65,31 @@ import "../styles/global.css"
     border-radius: 1rem;
   }
 
-.circle {
+  .circle {
     width: 40px; /* Diameter af cirklen */
     height: 40px; /* Diameter af cirklen */
-    background-color: #D9D9D9; /* Cirkelfarve */
+    background-color: #d9d9d9; /* Cirkelfarve */
     border-radius: 50%; /* Gør boksen rund */
     display: flex; /* Brug flexbox for at centrere ikonet */
     justify-content: center; /* Centrerer ikonet horisontalt */
     align-items: center; /* Centrerer ikonet vertikalt */
     margin-right: 10px; /* Tilføj lidt plads mellem cirklen og linket */
-}
+  }
 
-.circle img {
+  .circle img {
     width: 9%; /* Juster størrelsen på ikonet, så det passer inden i cirklen */
     height: auto; /* Behold proportionerne */
     position: absolute;
-}
+  }
 
- .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 1.5rem;
-  position: relative; /* Giver navbar'en en relativ position */
-  height: 60px; /* Definerer højde */
-}
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    position: relative; /* Giver navbar'en en relativ position */
+    height: 60px; /* Definerer højde */
+  }
 
   .bar {
     display: block;
@@ -103,82 +101,78 @@ import "../styles/global.css"
     align-content: end;
   }
 
-.hamburger {
-  position: fixed; /* Bruger fixed i stedet for sticky */
-  top: 10px; 
-  right: 20px; /* Placerer det i højre side */
-  z-index: 1001; 
-}
+  .hamburger {
+    position: fixed; /* Bruger fixed i stedet for sticky */
+    top: 10px;
+    right: 20px; /* Placerer det i højre side */
+    z-index: 1001;
+  }
 
-.menu-icon {
-  width: 7px; /* Juster størrelsen på ikonet efter behov */
-  height: auto;
-  display: block;
-}
+  .menu-icon {
+    width: 7px; /* Juster størrelsen på ikonet efter behov */
+    height: auto;
+    display: block;
+  }
 
   .nav-menu {
-        width: 25%; /* Bredde på ca. 1/4 af skærmen */
-            position: absolute;
+    width: 25%; /* Bredde på ca. 1/4 af skærmen */
+    position: absolute;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-        list-style: none; /* Fjerner standard punkttegn */
+    list-style: none; /* Fjerner standard punkttegn */
     padding: 0; /* Fjerner standard padding */
     display: flex; /* Gør nav-menu til en flex-container */
     flex-direction: column; /* Arrangerer menu links lodret */
-    
   }
 
   .menu-link {
     margin-left: 5rem;
-        display: flex; /* Gør menu links til flexbox for at centrere indhold */
+    display: flex; /* Gør menu links til flexbox for at centrere indhold */
     align-items: center; /* Centrerer indholdet lodret */
     margin: 10px 0; /* Tilføj luft mellem links */
   }
 
   .menu-link {
-  font-size: 1rem;
-  font-weight: 400;
-  color: white;
-  padding: 10px 40px; /* Tilføjelse af lidt padding for bedre klikbarhed */
+    font-size: 1rem;
+    font-weight: 400;
+    color: white;
+    padding: 10px 40px; /* Tilføjelse af lidt padding for bedre klikbarhed */
     width: 100%; /* Gør linkene til at fylde hele bredden af menuen */
-  text-align: center; /* Centrerer teksten horisontalt */
+    text-align: center; /* Centrerer teksten horisontalt */
     margin: 5px 0; /* **Tilføjer margin mellem linkene** */
-  transition: background 0.3s; /* Glidende ændring af baggrunden ved hover */  
-}
-
-.menu-link a {
-  font-size: 1rem;
-  font-weight: 400;
-  color: white;
-  padding: 10px 40px; /* Tilføjelse af lidt padding for bedre klikbarhed */
-  text-align: center; /* Centrerer teksten horisontalt */
-  width: 100%; /* Gør linkene til at fylde hele bredden af menuen */
-}
-
-
-  .menu-link a:hover {
-    color: #BA33FF;
+    transition: background 0.3s; /* Glidende ændring af baggrunden ved hover */
   }
 
- .nav-menu {
-  position: fixed;
-  right: -100%; /* Skjult til at starte med */
-  top: 3rem;
-  width: 14%; /* Bredde på ca. 1/4 af skærmen */
-    height: 50vh; /* Sætter højden til 70% af viewport højden */
-  background-color: rgba(48, 48, 48, 0.7); /* Gennemsigtig baggrund */
-  flex-direction: column;
-  transition: right 0.5s ease-in-out; /* Animation for at glide ind/ud */
-  z-index: 1000; /* Sørger for, at menuen er ovenpå andre elementer */
-      border: 1px solid #ffffff; /* Hvid kantlinje, juster tykkelsen og farven som ønsket */
+  .menu-link a {
+    font-size: 1rem;
+    font-weight: 400;
+    color: white;
+    padding: 10px 40px; /* Tilføjelse af lidt padding for bedre klikbarhed */
+    text-align: center; /* Centrerer teksten horisontalt */
+    width: 100%; /* Gør linkene til at fylde hele bredden af menuen */
+  }
 
-}
+  .menu-link a:hover {
+    color: #ba33ff;
+  }
+
+  .nav-menu {
+    position: fixed;
+    right: -100%; /* Skjult til at starte med */
+    top: 3rem;
+    width: 14%; /* Bredde på ca. 1/4 af skærmen */
+    height: 50vh; /* Sætter højden til 70% af viewport højden */
+    background-color: rgba(48, 48, 48, 0.7); /* Gennemsigtig baggrund */
+    flex-direction: column;
+    transition: right 0.5s ease-in-out; /* Animation for at glide ind/ud */
+    z-index: 1000; /* Sørger for, at menuen er ovenpå andre elementer */
+    border: 1px solid #ffffff; /* Hvid kantlinje, juster tykkelsen og farven som ønsket */
+  }
 
   .nav-menu.active {
     right: 2%; /* Sørger for, at den ikke fylder hele skærmen ved at efterlade 5% margin */
   }
-
 
   .hamburger {
     display: block;
