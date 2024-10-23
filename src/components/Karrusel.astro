@@ -17,7 +17,7 @@
             <img src="./Images/pic1.jpg" alt="Nyheder" />
           </div>
           <div class="infos">
-            <span class="name">Navn</span>
+            <span class="name">Nyheder</span>
             <span class="lorem"
               >Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
               assumenda expedita eum voluptas repellendus ipsa quis iusto,
@@ -33,7 +33,7 @@
             <img src="./Images/pic2.jpg" alt="Nyheder" />
           </div>
           <div class="infos">
-            <span class="name">Navn</span>
+            <span class="name">Nyheder</span>
             <span class="lorem"
               >Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
               assumenda expedita eum voluptas repellendus ipsa quis iusto,
@@ -49,7 +49,7 @@
             <img src="./Images/pic3.jpg" alt="Nyheder" />
           </div>
           <div class="infos">
-            <span class="name">Navn</span>
+            <span class="name">Nyheder</span>
             <span class="lorem"
               >Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
               assumenda expedita eum voluptas repellendus ipsa quis iusto,
@@ -65,7 +65,7 @@
             <img src="./Images/pic4.jpg" alt="Nyheder" />
           </div>
           <div class="infos">
-            <span class="name">Navn</span>
+            <span class="name">Nyheder</span>
             <span class="lorem"
               >Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
               assumenda expedita eum voluptas repellendus ipsa quis iusto,
@@ -77,14 +77,11 @@
       </label>
       <label for="s5" id="slide5">
         <div class="card">
-            <div class="card-title">
-                <h1>News</h1>
-            </div>
           <div class="image">
             <img src="./Images/pic5.jpg" alt="Nyheder" />
           </div>
           <div class="infos">
-            <span class="name">Navn</span>
+            <span class="name">Nyheder</span>
             <span class="lorem"
               >Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
               assumenda expedita eum voluptas repellendus ipsa quis iusto,
@@ -146,21 +143,15 @@
 }
 
 .cards .card {
-    background-color: #151515;
-    border-radius: 2rem; */
-    width: 426px;
-    display: inline-block;
-    height: 332px;
-    position: relative;
-    border-radius: 15px;
-    border: 0.5px white solid;
-  }
-
-  .card-title {
-    left: 180px;
-    top: 40px;
-    position: relative;
-    color: white;
+  background-color: #151515;
+  border-radius: 2rem; */
+  width: 426px;
+  display: inline-block;
+  height: 332px;
+  position: relative;
+  border-radius: 15px;
+  border: 0.5px white solid;
+  transition: transform 0.55s ease;
   }
 
   .cards .image {
@@ -190,9 +181,10 @@
       23% 12%
     );
   }
-
-  .cards .image img:hover {
+  
+  .card:hover {
     transform: scale(1.05);
+    animation: glow-pulse infinite forwards;
   }
 
   .card .infos {
@@ -206,37 +198,34 @@
   }
 
   .infos .name {
-    font-size: 30px;
-    color: var(--current-color1);
-    letter-spacing: 8px;
+    font-size: 20px;
+    color: #eceaed;
     margin-bottom: 20px;
     transition: all 0.6s ease;
+    z-index: 1000;
+    transform: translate(0%, -200%);
+    justify-content: center;
   }
+
+  @keyframes glow-pulse {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 10, 226, 0.5);
+      }
+      50% {
+        filter: brightness(1.75);
+      }
+      100% {
+        box-shadow: 0 0 20px rgb(216, 42, 255);
+        filter: brightness(1.75);
+      }
+}
 
   .card .lorem {
     font-size: 15.5px;
     color: #eceaed;
     letter-spacing: 3px;
-  }
-
-  .card .btn-details {
-    width: 100%;
-    height: 60px;
-    margin: 35px auto;
-    border-radius: 5px;
-    background-color: var(--current-color1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-size: 25px;
-    letter-spacing: 10px;
-    font-weight: 700;
-    transition: all 0.7s ease;
-  }
-
-  .card .btn-details:hover {
-    transform: scale(1.09);
+    display: none;
+    color: #151515;
   }
 
   input {
