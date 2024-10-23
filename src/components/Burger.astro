@@ -1,38 +1,44 @@
 ---
-
+import "../styles/global.css"
 ---
 
 <nav class="navbar">
   <ul class="nav-menu">
-    <li>
-      <a href="index.html" class="nav-logo"
-        ><img src="billeder/logo.png" alt="navbar_logo" width="60" /></a
-      >
+
+ <div class="circle">
+    <img src="./Images/home 1.png" alt="" class="home-ikon">
+
+    <li class="menu-link">
+      <a href="website.html" class="menu-link">HOME</a>
     </li>
-    <li class="nav-item none2">
-      <a id="follow1" href="" class="nav-link">Portfolio 2024©</a>
+    </div>
+    <hr style="border: 1px solid white; width: 100px; margin-top: 10px;">
+    <div class="circle">
+    <img src="./Images/microphone-alt 1.png" alt="" class="lineup-ikon">
+    <li class="menu-link">
+      <a href="emnesite.html" class="menu-link">LINE-UP</a>
     </li>
-    <li class="nav-item"><a href="ommig.html" class="nav-link2">OM MIG</a></li>
-    <li class="nav-item2 none">
-      <a href="website.html" class="nav-link2">WEBSITE</a>
+    </div>
+    <hr style="border: 1px solid white; width: 100px; margin-top: 10px;">
+    <div class="circle">
+    <img src="./Images/newspaper 1.png" alt="" class="news-ikon">
+
+    <li class="menu-link">
+      <a href="temaopgave.html" class="menu-link">NEWS</a>
     </li>
-    <li class="nav-item2 none">
-      <a href="emnesite.html" class="nav-link2">EMNESITE</a>
+    </div>
+    <hr style="border: 1px solid white; width: 100px; margin-top: 10px;">
+    <div class="circle">
+    <img src="./Images/user 1.png" alt="" class="login-ikon">
+
+    <li class="menu-link">
+      <a href="passionssite.html" class="menu-link">LOG-IN</a>
     </li>
-    <li class="nav-item2 none">
-      <a href="temaopgave.html" class="nav-link2">TEMAOPGAVE</a>
-    </li>
-    <li class="nav-item2 none">
-      <a href="passionssite.html" class="nav-link2">PASSIONSSITE</a>
-    </li>
-    <li class="nav-item2 none">
-      <a href="virksomhedssite.html" class="nav-link2">VIRKSOMHEDSSITE</a>
-    </li>
+    </div>
+
   </ul>
-  <div class="hamburger">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
+<div class="hamburger">
+    <img src="./Images/burgermenuhvid.png" alt="Menu" class="menu-icon">
   </div>
   <script src="../pages/burger.js"></script>
 </nav>
@@ -42,7 +48,6 @@
     list-style: none;
     height: auto;
     background-color: #f59dff;
-    border-radius: 1rem;
     align-items: center;
     display: flex;
     width: 100%;
@@ -58,17 +63,35 @@
   }
 
   ul li a:hover {
-    background: #fed018;
     width: 80%;
     border-radius: 1rem;
   }
 
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 1.5rem;
-  }
+.circle {
+    width: 40px; /* Diameter af cirklen */
+    height: 40px; /* Diameter af cirklen */
+    background-color: #D9D9D9; /* Cirkelfarve */
+    border-radius: 50%; /* Gør boksen rund */
+    display: flex; /* Brug flexbox for at centrere ikonet */
+    justify-content: center; /* Centrerer ikonet horisontalt */
+    align-items: center; /* Centrerer ikonet vertikalt */
+    margin-right: 10px; /* Tilføj lidt plads mellem cirklen og linket */
+}
+
+.circle img {
+    width: 9%; /* Juster størrelsen på ikonet, så det passer inden i cirklen */
+    height: auto; /* Behold proportionerne */
+    position: absolute;
+}
+
+ .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  position: relative; /* Giver navbar'en en relativ position */
+  height: 60px; /* Definerer højde */
+}
 
   .bar {
     display: block;
@@ -80,60 +103,82 @@
     align-content: end;
   }
 
-  .hamburger {
-    display: none;
-    cursor: pointer;
-    margin-left: auto;
-  }
+.hamburger {
+  position: fixed; /* Bruger fixed i stedet for sticky */
+  top: 10px; 
+  right: 20px; /* Placerer det i højre side */
+  z-index: 1001; 
+}
+
+.menu-icon {
+  width: 7px; /* Juster størrelsen på ikonet efter behov */
+  height: auto;
+  display: block;
+}
 
   .nav-menu {
-    display: flex;
+        width: 25%; /* Bredde på ca. 1/4 af skærmen */
+            position: absolute;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
+        list-style: none; /* Fjerner standard punkttegn */
+    padding: 0; /* Fjerner standard padding */
+    display: flex; /* Gør nav-menu til en flex-container */
+    flex-direction: column; /* Arrangerer menu links lodret */
+    
   }
 
-  .nav-item {
+  .menu-link {
     margin-left: 5rem;
+        display: flex; /* Gør menu links til flexbox for at centrere indhold */
+    align-items: center; /* Centrerer indholdet lodret */
+    margin: 10px 0; /* Tilføj luft mellem links */
   }
 
-  .nav-link {
-    font-size: 1.6rem;
-    font-weight: 400;
-    color: #000000;
+  .menu-link {
+  font-size: 1rem;
+  font-weight: 400;
+  color: white;
+  padding: 10px 40px; /* Tilføjelse af lidt padding for bedre klikbarhed */
+    width: 100%; /* Gør linkene til at fylde hele bredden af menuen */
+  text-align: center; /* Centrerer teksten horisontalt */
+    margin: 5px 0; /* **Tilføjer margin mellem linkene** */
+  transition: background 0.3s; /* Glidende ændring af baggrunden ved hover */  
+}
+
+.menu-link a {
+  font-size: 1rem;
+  font-weight: 400;
+  color: white;
+  padding: 10px 40px; /* Tilføjelse af lidt padding for bedre klikbarhed */
+  text-align: center; /* Centrerer teksten horisontalt */
+  width: 100%; /* Gør linkene til at fylde hele bredden af menuen */
+}
+
+
+  .menu-link a:hover {
+    color: #BA33FF;
   }
 
-  .nav-link:hover {
-    color: #ffffff;
-  }
+ .nav-menu {
+  position: fixed;
+  right: -100%; /* Skjult til at starte med */
+  top: 3rem;
+  width: 14%; /* Bredde på ca. 1/4 af skærmen */
+    height: 50vh; /* Sætter højden til 70% af viewport højden */
+  background-color: rgba(48, 48, 48, 0.7); /* Gennemsigtig baggrund */
+  flex-direction: column;
+  transition: right 0.5s ease-in-out; /* Animation for at glide ind/ud */
+  z-index: 1000; /* Sørger for, at menuen er ovenpå andre elementer */
+      border: 1px solid #ffffff; /* Hvid kantlinje, juster tykkelsen og farven som ønsket */
 
-  .nav-menu {
-    position: fixed;
-    right: -100%;
-    top: 5rem;
-    flex-direction: column;
-    background-color: #2b2b2b;
-    width: 100%;
-    border-radius: 10px;
-    text-align: center;
-    transition: 0.3s;
-    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-  }
+}
 
   .nav-menu.active {
-    right: 0;
+    right: 2%; /* Sørger for, at den ikke fylder hele skærmen ved at efterlade 5% margin */
   }
 
-  .nav-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    margin: 0 20px 20px;
-    background-color: #ffffff;
-    border-radius: 1rem;
-    width: 90%;
-  }
 
   .hamburger {
     display: block;

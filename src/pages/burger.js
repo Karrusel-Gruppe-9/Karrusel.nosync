@@ -1,6 +1,7 @@
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 
+// Åbner/lukker menuen ved klik på hamburger-ikonet
 hamburger.addEventListener("click", mobileMenu);
 
 function mobileMenu() {
@@ -8,9 +9,12 @@ function mobileMenu() {
   navMenu.classList.toggle("active");
 }
 
-const navLink = document.querySelectorAll(".nav-link");
+// Lukker menuen, når et link klikkes
+const navLinks = document.querySelectorAll(".nav-link");
 
-navLink.forEach((n) => n.addEventListener("click", closeMenu));
+navLinks.forEach((link) => {
+  link.addEventListener("click", closeMenu);
+});
 
 function closeMenu() {
   hamburger.classList.remove("active");
