@@ -8,30 +8,29 @@ import "../styles/global.css";
       <img src="./Images/home 1.png" alt="" class="home-ikon" />
 
       <li class="menu-link">
-        <a href="website.html" class="menu-link">HOME</a>
+        <a href="website.html" class="menu-link2">HOME</a>
       </li>
     </div>
-    <hr style="border: 1px solid white; width: 100px; margin-top: 10px;" />
+    <hr style="border: 1px solid white; width: 80%; margin-top: 10px;" />
     <div class="circle">
       <img src="./Images/microphone-alt 1.png" alt="" class="lineup-ikon" />
       <li class="menu-link">
-        <a href="emnesite.html" class="menu-link">LINE-UP</a>
+        <a href="emnesite.html" class="menu-link2">LINE-UP</a>
       </li>
     </div>
-    <hr style="border: 1px solid white; width: 100px; margin-top: 10px;" />
+    <hr style="border: 1px solid white; width: 80%; margin-top: 10px;" />
     <div class="circle">
       <img src="./Images/newspaper 1.png" alt="" class="news-ikon" />
-
       <li class="menu-link">
-        <a href="temaopgave.html" class="menu-link">NEWS</a>
+        <a href="temaopgave.html" class="menu-link2">NEWS</a>
       </li>
     </div>
-    <hr style="border: 1px solid white; width: 100px; margin-top: 10px;" />
+    <hr style="border: 1px solid white; width: 80%; margin-top: 10px;" />
     <div class="circle">
       <img src="./Images/user 1.png" alt="" class="login-ikon" />
 
       <li class="menu-link">
-        <a href="passionssite.html" class="menu-link">LOG-IN</a>
+        <a href="passionssite.html" class="menu-link2">LOG-IN</a>
       </li>
     </div>
   </ul>
@@ -66,8 +65,8 @@ import "../styles/global.css";
   }
 
   .circle {
-    width: 40px; /* Diameter af cirklen */
-    height: 40px; /* Diameter af cirklen */
+    width: 55px; /* Diameter af cirklen */
+    height: 55px; /* Diameter af cirklen */
     background-color: #d9d9d9; /* Cirkelfarve */
     border-radius: 50%; /* Gør boksen rund */
     display: flex; /* Brug flexbox for at centrere ikonet */
@@ -93,7 +92,7 @@ import "../styles/global.css";
 
   .bar {
     display: block;
-    width: 25px;
+    width: 250px;
     height: 3px;
     margin: 5px auto;
     transition: all 0.3s ease-in-out;
@@ -126,6 +125,18 @@ import "../styles/global.css";
     flex-direction: column; /* Arrangerer menu links lodret */
   }
 
+  .nav-menu {
+    position: fixed;
+    right: -100%; /* Skjult til at starte med */
+    top: 3rem;
+    width: 25%; /* Bredde på ca. 1/4 af skærmen */
+    height: 50vh; /* Sætter højden til 70% af viewport højden */
+    background-color: rgba(48, 48, 48, 0.7); /* Gennemsigtig baggrund */
+    flex-direction: column;
+    transition: right 0.5s ease-in-out; /* Animation for at glide ind/ud */
+    z-index: 1000; /* Sørger for, at menuen er ovenpå andre elementer */
+    border: 1px solid #ffffff; /* Hvid kantlinje, juster tykkelsen og farven som ønsket */
+  }
   .menu-link {
     margin-left: 5rem;
     display: flex; /* Gør menu links til flexbox for at centrere indhold */
@@ -155,19 +166,6 @@ import "../styles/global.css";
 
   .menu-link a:hover {
     color: #ba33ff;
-  }
-
-  .nav-menu {
-    position: fixed;
-    right: -100%; /* Skjult til at starte med */
-    top: 3rem;
-    width: 14%; /* Bredde på ca. 1/4 af skærmen */
-    height: 50vh; /* Sætter højden til 70% af viewport højden */
-    background-color: rgba(48, 48, 48, 0.7); /* Gennemsigtig baggrund */
-    flex-direction: column;
-    transition: right 0.5s ease-in-out; /* Animation for at glide ind/ud */
-    z-index: 1000; /* Sørger for, at menuen er ovenpå andre elementer */
-    border: 1px solid #ffffff; /* Hvid kantlinje, juster tykkelsen og farven som ønsket */
   }
 
   .nav-menu.active {
