@@ -1,0 +1,18 @@
+---
+export async function getStaticPaths() {
+  const url = "https://dhkslhjolltfgybkbynh.supabase.co/rest/v1/info";
+  const options = {
+    method: "GET",
+    headers: {
+      apikey: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRoa3NsaGpvbGx0Zmd5YmtieW5oIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjg2MzUxMzAsImV4cCI6MjA0NDIxMTEzMH0.PdB3A9RoMZHik4jSgDicx6j1dUshJkVYhVKMvgRPmK0`,
+    },
+  };
+
+  const artister = await fetch(url, options).then((res) => res.json());
+
+  return artister.map((artist) => ({
+    params: {slug: artist.slug}, // [artist]=artist.slug
+    props: {artist}, // send al data med som props
+  }));
+}
+---

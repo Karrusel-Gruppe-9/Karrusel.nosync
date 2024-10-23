@@ -30,7 +30,7 @@ console.log(artister);
         <div class="image-wrapper">
           <img class="image" src={artist.img} />
         </div>
-        <div class="date-text">Manegen 18:00</div>
+        <div class="date-text">{artist.dato}</div>
         <div class="title-text">{artist.artist}</div>
         <div class="image-border" />
       </div>
@@ -53,6 +53,7 @@ console.log(artister);
     position: relative;
     width: 100%;
     height: 100%;
+    margin-top: 50px;
   }
 
   .background-box {
@@ -116,7 +117,7 @@ console.log(artister);
     text-align: center;
     position: absolute;
     top: 310px;
-    left: 350px;
+    left: 60%;
   }
 
   .title-text {

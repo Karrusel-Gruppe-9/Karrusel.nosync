@@ -6,21 +6,33 @@ import Navigation from "../components/Navigation.astro";
 import MainLayout from "../layout/MainLayout.astro";
 ---
 
-<MainLayout />
-<div class="headline">
-  <div class="back-button">
-    <Back />
+<MainLayout>
+  <div class="headline">
+    <div class="back-button">
+      <a href="/index.astro"><Back /></a>
+    </div>
+    <h1>LINE-UP</h1>
   </div>
-  <h1>LINE-UP</h1>
-</div>
-<div class="dates">
-  <h2>THURSDAY</h2>
-  <h2>FRIDAY</h2>
-  <h2>SATURDAY</h2>
-</div>
-<Card />
-<Card />
-<Card />
+  <div class="dates">
+    <h3><a href="#thursday">THURSDAY</a></h3>
+    <h3><a href="#friday">FRIDAY</a></h3>
+    <h3><a href="#saturday">SATURDAY</a></h3>
+  </div>
+  <div class="card-container">
+    <div id="thursday" class="lineup-container">
+      <img class="lineup-frame" src="./Images/cardsframe.png" alt="" />
+      <Card />
+    </div>
+    <div id="friday" class="lineup-container">
+      <img class="lineup-frame" src="./Images/cardsframefriday.png" alt="" />
+      <Card />
+    </div>
+    <div id="saturday" class="lineup-container">
+      <img class="lineup-frame" src="./Images/cardsframesaturday.png" alt="" />
+      <Card />
+    </div>
+  </div>
+</MainLayout>
 
 <style>
   .back-button {
@@ -40,15 +52,53 @@ import MainLayout from "../layout/MainLayout.astro";
     margin: 0;
     font-family: Warpen, sans-serif;
     color: #ba33ff;
-    font-size: 60px;
+    font-size: 70px;
   }
 
+  h2 {
+    display: flex;
+    color: white;
+    font-family: Warpen, sans-serif;
+    font-size: 30px;
+    justify-content: center;
+    margin-left: 300px;
+  }
+
+  h3 {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 200px;
+  }
   .dates {
     display: flex;
     color: white;
     margin-top: 75px;
     gap: 100px;
     font-family: Warpen, sans-serif;
+    justify-content: center;
+  }
+
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    margin-top: 0px;
+  }
+
+  a {
+    color: white;
+  }
+
+  .lineup-frame {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+  }
+
+  .lineup-container {
+    margin-bottom: 300px;
+    display: flex;
     justify-content: center;
   }
 </style>
