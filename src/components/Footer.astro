@@ -3,91 +3,101 @@
 ---
 
 <footer>
-  <img class="footer" src="/public/Images/footer.png" alt="footer image" />
-  <a href="#" class="box-link1"></a>
-  <a href="#" class="box-link2"></a>
-  <a href="#" class="box-link3"></a>
-  <a href="#" class="box-link4"></a>
-  <a
-    href="https://www.facebook.com/Karruselfestival"
-    target="_blank"
-    class="box-link5"></a>
-  <a href="https://www.karrusel.dk/" target="_blank" class="box-link6"></a>
-  <a
-    href="https://www.youtube.com/@karruselcopenhagen557/videos"
-    target="_blank"
-    class="box-link7"></a>
+  <div class="back-container">
+    <img class="img" src="/Images/linje.png" alt="footer image" />
+    <div class="text-wrapper">
+      <a href="#" class="box-link1">SUSTAINABILITY</a>
+      <a href="#" class="box-link2">ABOUT US</a>
+      <a href="#" class="box-link3">CONTACT</a>
+      <a href="#" class="box-link4">FAQ</a>
+    </div>
+    <div class="logo-wrapper">
+      <a
+        href="https://www.facebook.com/Karruselfestival"
+        target="_blank"
+        class="box-link5"
+        ><img
+          src="/Images/face.png"
+          alt="footer image"
+          width="42px"
+          height="42px"
+        /></a
+      >
+      <a href="https://www.karrusel.dk/" target="_blank" class="box-link6"
+        ><img
+          src="/Images/insta.png"
+          alt="footer image"
+          width="50px"
+          height="50px"
+        /></a
+      >
+      <a
+        href="https://www.youtube.com/@karruselcopenhagen557/videos"
+        target="_blank"
+        class="box-link7"
+        ><img
+          src="/Images/you.png"
+          alt="footer image"
+          width="50px"
+          height="50px"
+        /></a
+      >
+    </div>
+  </div>
 </footer>
 
 <style>
-  .footer {
-    margin-left: 5%;
+  .back-container {
     padding-bottom: 10px;
-    margin-top: 400px;
+    margin-top: 300px;
+    position: relative;
+    width: 100%;
+    height: auto;
   }
-  .box-link1 {
-    display: inline-block; /* Makes the a tag respect width and height */
-    width: 220px; /* Set specific width */
-    height: 30px; /* Set specific height */
+
+  .img {
+    width: 95%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    display: flex;
+  }
+
+  .text-wrapper {
+    width: 100%;
+    height: auto;
     position: absolute;
-    top: 375%;
-    left: 17%;
-    transform: translate(-50%, -50%);
+    display: block;
+    z-index: 20;
+    top: 50px;
+    left: 20px;
   }
-  .box-link2 {
-    display: inline-block; /* Makes the a tag respect width and height */
-    width: 130px; /* Set specific width */
-    height: 30px; /* Set specific height */
-    position: absolute;
-    top: 375%;
-    left: 33.5%;
-    transform: translate(-50%, -50%);
-  }
-  .box-link3 {
-    display: inline-block; /* Makes the a tag respect width and height */
-    width: 117px; /* Set specific width */
-    height: 30px; /* Set specific height */
-    position: absolute;
-    top: 375%;
-    left: 46.2%;
-    transform: translate(-50%, -50%);
-  }
+  .box-link1,
+  .box-link2,
+  .box-link3,
   .box-link4 {
-    display: inline-block; /* Makes the a tag respect width and height */
-    width: 57px; /* Set specific width */
-    height: 30px; /* Set specific height */
-    position: absolute;
-    top: 375%;
-    left: 56.5%;
-    transform: translate(-50%, -50%);
+    transform: translate(50%, 50%);
+    color: white;
+    text-decoration: none;
+    font-size: 1.5vw;
+    padding: 0 3%;
+    margin-left: 2%;
   }
-  .box-link5 {
-    display: inline-block; /* Makes the a tag respect width and height */
-    width: 48px; /* Set specific width */
-    height: 44px; /* Set specific height */
+
+  .logo-wrapper {
+    width: 100%;
+    height: auto;
     position: absolute;
-    top: 396%;
-    left: 76.5%;
-    transform: translate(-50%, -50%);
+    display: inline-block;
+    z-index: 20;
+    top: 65%;
+    left: 75%;
   }
-  .box-link6 {
-    display: inline-block; /* Makes the a tag respect width and height */
-    width: 44.7px; /* Set specific width */
-    height: 44px; /* Set specific height */
-    background-color: transparent; /* Transparent background */
-    position: absolute;
-    top: 396%;
-    left: 81.9%;
-    transform: translate(-50%, -50%);
-  }
+
+  .box-link5,
+  .box-link6,
   .box-link7 {
-    display: inline-block; /* Makes the a tag respect width and height */
-    width: 48px; /* Set specific width */
-    height: 42.25px; /* Set specific height */
-    background-color: transparent; /* Transparent background */
-    position: absolute;
-    top: 396%;
-    left: 87.5%;
-    transform: translate(-50%, -50%);
+    padding: 0 1%;
+    transform: translate(50%, 50%);
   }
 </style>
