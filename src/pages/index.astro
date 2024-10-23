@@ -7,6 +7,7 @@ import Back from "../components/Back.astro";
 import Lineup from "../components/Lineup.astro";
 import Karrusel from "../components/Karrusel.astro";
 import Burger from "../components/Burger.astro";
+import SignUp from "../components/Sign-up.astro";
 ---
 
 <html lang="en">
@@ -30,21 +31,17 @@ import Burger from "../components/Burger.astro";
         </div>
         <img class="news" src="./Images/news.png" alt="news" />
       </div>
-      <div class="info-box">
-        <img src="./Images/info-news.png" alt="Ramme" />
+      <div class="ramme">
+        <img class="" src="./Images/info.png" alt="Ramme" />
+        <p class="info-text">
+          Herunder kan du læse de seneste opdateringer om festivalen, som byder
+          på spændende musikoplevelser, kunstinstallationer og madoplevelser i
+          verdensklasse. Hold dig opdateret med nyhederne herunder for at få de
+          seneste informationer om arrangementer og praktiske detaljer.
+        </p>
       </div>
       <Karrusel />
-      <div class="sign-container">
-        <div class="grid-1">
-          <h1>NEWS SIGN UP</h1>
-          <p>Sign up for relevant info, artist news and special offers</p>
-          <form action="email">Email</form>
-          <button>Sign-up</button>
-        </div>
-        <div class="grid-2">
-          <img src="./Images/signup-right.png" alt="Sign-up Billede" />
-        </div>
-      </div>
+      <SignUp />
     </main>
   </body>
 </html>
@@ -97,27 +94,24 @@ import Burger from "../components/Burger.astro";
 
   /* Sign-up */
 
-  .sign-container {
-    width: 80%;
-    justify-content: center;
-    border: 1px solid white;
-    background-color: #404457;
-    clip-path: polygon(7% 0, 100% 0, 100% 90%, 28% 91%, 18% 100%, 0 100%, 0 8%);
-    margin: 0 auto;
+  .ramme {
+    position: relative;
     display: flex;
-    position: relative; /* Gør det muligt at positionere pseudo-elementer relativt */
+    margin: 150px auto 0px;
+    justify-content: center;
   }
 
-  .sign-container::before,
-  .sign-container::after {
-    content: "";
+  .ramme img {
+    width: 70%;
+  }
+
+  .info-text {
     position: absolute;
-    background-color: #000000; /* Matcher baggrundsfarven */
-    width: 100px; /* Juster efter behov */
-    height: 100px; /* Juster efter behov */
-    border-radius: 50%; /* Giver runding */
-    top: 80%;
-    left: 95%;
+    color: white;
+    transform: translate(0%, 35%);
+    max-width: 900px;
+    font-size: 2vw;
+    box-sizing: border-box;
   }
 </style>
 
