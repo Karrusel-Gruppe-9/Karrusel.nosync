@@ -1,20 +1,73 @@
 ---
 import "../styles/global.css";
 import Card from "../components/Card.astro";
-import Navigation from "../components/Navigation.astro";
+import Back from "../components/Button.astro";
 import MainLayout from "../layout/MainLayout.astro";
+const key = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRoa3NsaGpvbGx0Zmd5YmtieW5oIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjg2MzUxMzAsImV4cCI6MjA0NDIxMTEzMH0.PdB3A9RoMZHik4jSgDicx6j1dUshJkVYhVKMvgRPmK0`;
+
+const artister = await fetch(
+  "https://dhkslhjolltfgybkbynh.supabase.co/rest/v1/info",
+  {
+    method: "GET",
+    headers: {
+      apikey: key,
+    },
+  }
+).then((res) => res.json());
+const getThursday = artister.filter((a) => a.dag === "torsdag");
+const getFriday = artister.filter((a) => a.dag === "Fredag");
+const getSaturday = artister.filter((a) => a.dag === "Lørdag");
+
+console.log(artister);
 ---
 
-<MainLayout />
-<div class="headline">
-  <img class="back-button" src="../public/karrusel-logo.png" alt="" />
-  <h1>LINE-UP</h1>
-</div>
-<Card />
-<Card />
-<Card />
+<MainLayout>
+  <div class="headline">
+    <div class="back-button">
+      <a href="/index.astro"><Back /></a>
+    </div>
+    <h1>LINE-UP</h1>
+  </div>
+  <div class="dates">
+    <h3><a href="#thursday">THURSDAY</a></h3>
+    <h3><a href="#friday">FRIDAY</a></h3>
+    <h3><a href="#saturday">SATURDAY</a></h3>
+  </div>
+  <div class="card-container">
+    <div id="thursday" class="lineup-container">
+      <img class="lineup-frame" src="./Images/cardsframe.png" alt="" />
+      <ul class="grid-container">
+        {getThursday.map((artist) => <Card data={artist} />)}
+      </ul>
+    </div>
+    <div id="friday" class="lineup-container">
+      <img class="lineup-frame" src="./Images/cardsframefriday.png" alt="" />
+      <ul class="grid-container">
+        {getFriday.map((artist) => <Card data={artist} />)}
+      </ul>
+    </div>
+    <div id="saturday" class="lineup-container">
+      <img class="lineup-frame" src="./Images/cardsframesaturday.png" alt="" />
+      <ul class="grid-container">
+        {getSaturday.map((artist) => <Card data={artist} />)}
+      </ul>
+    </div>
+  </div>
+</MainLayout>
 
 <style>
+  .grid-container {
+    margin-top: 10%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 100px;
+  }
+  .back-button {
+    display: flex;
+    left: 0;
+    position: absolute;
+    margin: 30px;
+  }
   .headline {
     display: flex;
     align-items: center;
@@ -24,14 +77,55 @@ import MainLayout from "../layout/MainLayout.astro";
   h1 {
     color: white;
     margin: 0;
+    font-family: Warpen, sans-serif;
+    color: #ba33ff;
+    font-size: 90px;
   }
 
-  .back-button {
+  h2 {
+    display: flex;
+    color: white;
+    font-family: Warpen, sans-serif;
+    font-size: 30px;
+    justify-content: center;
+    margin-left: 300px;
+  }
+
+  h3 {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 200px;
+  }
+  .dates {
+    display: flex;
+    color: white;
+    margin-top: 75px;
+    gap: 100px;
+    font-family: Warpen, sans-serif;
+    justify-content: center;
+  }
+
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 0px;
+  }
+
+  a {
+    color: white;
+  }
+
+  .lineup-frame {
+    display: flex;
     position: absolute;
-    left: 0; /* Placerer knappen i venstre hjørne */
-    background-color: #f0f0f0;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
+    justify-content: center;
+  }
+
+  .lineup-container {
+    margin-bottom: 300px;
+    display: flex;
+    justify-content: center;
   }
 </style>
