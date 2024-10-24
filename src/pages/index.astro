@@ -8,6 +8,11 @@ import Article from "../components/Article.astro";
 import Karrusel from "../components/Karrusel.astro";
 import SignUp from "../components/Sign-up.astro";
 import Footer from "../components/Footer.astro";
+import "../pages/Fonts/Warpen.otf";
+import "../pages/Fonts/Warpen.ttf";
+import "../pages/Fonts/IBMPlexMono-Bold.ttf";
+import "../pages/Fonts/IBMPlexMono-Regular.ttf";
+import "../pages/Fonts/IBMPlexMono-SemiBold.ttf";
 ---
 
 <html lang="en">
@@ -111,9 +116,12 @@ import Footer from "../components/Footer.astro";
     .info-text {
       position: absolute;
       color: white;
-      transform: translate(0%, 35%);
+      transform: translate(2%, 5%);
       width: 60%;
-      font-size: 2vw;
+      font-size: 1.8vw;
+      font-family: "IBM Plex Mono", serif;
+      font-weight: 400;
+      font-style: normal;
       box-sizing: border-box;
     }
   }
@@ -157,6 +165,9 @@ import Footer from "../components/Footer.astro";
       transform: translate(0%, 5%);
       width: 60%;
       font-size: 3vw;
+      font-family: "IBM Plex Mono", serif;
+      font-weight: 400;
+      font-style: normal;
       box-sizing: border-box;
     }
   }
@@ -179,7 +190,27 @@ import Footer from "../components/Footer.astro";
       transform: translate(0%, 20%);
       width: 60%;
       font-size: 3.9vw;
+      font-family: "IBM Plex Mono", serif;
+      font-weight: 400;
+      font-style: normal;
       box-sizing: border-box;
     }
   }
+
+  body {
+    background-color: black;
+    font-family:
+      Warpen,
+      sans serif;
+  }
+
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+</style>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 </style>

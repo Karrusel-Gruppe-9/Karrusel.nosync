@@ -1,5 +1,7 @@
 ---
 import SignupButton from "./SignupButton.astro";
+import "../../pages/Fonts/Warpen.otf";
+import "../../pages/Fonts/Warpen.ttf";
 ---
 
 <h1>HOLD DIG OPDATERET</h1>
@@ -71,12 +73,15 @@ import SignupButton from "./SignupButton.astro";
 
     .grid-1 h2,
     .grid-1 p {
-      padding: 0 0 10% 0;
+      padding: 0 0 0.5% 0;
     }
 
     .grid-1 p {
-      font-size: 2vw;
+      font-size: 1.8vw;
       max-width: 400px;
+      font-family: "IBM Plex Mono", serif;
+      font-weight: 400;
+      font-style: normal;
     }
 
     .grid-2 img {
@@ -94,6 +99,9 @@ import SignupButton from "./SignupButton.astro";
       border: 1px solid #ba33ff;
       padding-right: 30%;
       margin-right: 10px;
+      font-family: "IBM Plex Mono", serif;
+      font-weight: 400;
+      font-style: normal;
     }
   }
   @media (max-width: 1024px) {
