@@ -72,6 +72,7 @@ import Footer from "../components/Footer.astro";
     left: 48%;
     transform: translate(-50%, -50%);
     z-index: 10;
+    width: 80%;
   }
 
   .frontpage-container {
@@ -95,24 +96,92 @@ import Footer from "../components/Footer.astro";
   }
 
   /* News Ramme */
-  .ramme {
-    position: relative;
-    display: flex;
-    margin: 250px auto 100px;
-    justify-content: center;
-  }
 
-  .ramme img {
-    width: 70%;
-  }
+  @media (min-width: 1024px) {
+    .ramme {
+      position: relative;
+      display: flex;
+      margin: 250px auto 100px;
+      justify-content: center;
+    }
 
-  .info-text {
-    position: absolute;
-    color: white;
-    transform: translate(0%, 35%);
-    width: 60%;
-    font-size: 2vw;
-    box-sizing: border-box;
+    .ramme img {
+      width: 70%;
+    }
+
+    .info-text {
+      position: absolute;
+      color: white;
+      transform: translate(0%, 35%);
+      width: 60%;
+      font-size: 2vw;
+      box-sizing: border-box;
+    }
+  }
+  @media (max-width: 1024px) {
+    .ramme {
+      position: relative;
+      display: flex;
+      margin: 150px auto 100px;
+      justify-content: center;
+    }
+
+    .ramme img {
+      width: 70%;
+    }
+
+    .info-text {
+      position: absolute;
+      color: white;
+      transform: translate(0%, 35%);
+      width: 60%;
+      font-size: 2vw;
+      box-sizing: border-box;
+    }
+  }
+  @media (max-width: 768px) {
+    .ramme {
+      position: relative;
+      display: flex;
+      margin: 50px auto 100px;
+      justify-content: center;
+    }
+
+    .ramme img {
+      width: 70%;
+      height: 40vh;
+    }
+
+    .info-text {
+      position: absolute;
+      color: white;
+      transform: translate(0%, 5%);
+      width: 60%;
+      font-size: 3vw;
+      box-sizing: border-box;
+    }
+  }
+  @media (max-width: 480px) {
+    .ramme {
+      position: relative;
+      display: flex;
+      margin: 50px auto 100px;
+      justify-content: center;
+    }
+
+    .ramme img {
+      width: 70%;
+      height: 40vh;
+    }
+
+    .info-text {
+      position: absolute;
+      color: white;
+      transform: translate(0%, 5%);
+      width: 60%;
+      font-size: 3.9vw;
+      box-sizing: border-box;
+    }
   }
 </style>
 
