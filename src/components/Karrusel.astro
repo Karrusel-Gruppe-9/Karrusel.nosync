@@ -97,7 +97,7 @@
 
 <style>
   
-  @media (min-width: 1025px) {
+  @media (min-width: 1024px) {
     .sliderContainer {
       display: flex;
       justify-content: center;
@@ -142,7 +142,7 @@
   
   .cards .card {
     background-color: #151515;
-    border-radius: 2rem; */
+    border-radius: 2rem;
     width: 426px;
     display: inline-block;
     height: 332px;
@@ -302,8 +302,8 @@
     .container {
       width: 100%;
       height: 100%;
-      max-width: 600px;
-      max-height: 600px;
+      max-width: 400px;
+      max-height: 400px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -315,7 +315,7 @@
     .cards {
       position: relative;
       height: 500px;
-      width: 530px;
+      width: 330px;
       margin: 0 auto 20px;
       perspective: 1000px;
       transform-style: preserve-3d;
@@ -324,7 +324,7 @@
   
     .cards label {
       position: absolute;
-      width: 530px;
+      width: 380px;
       margin: auto;
       cursor: pointer;
       transition: transform 0.55s ease;
@@ -335,7 +335,7 @@
     border-radius: 2rem; */
     width: 426px;
     display: inline-block;
-    height: 332px;
+    height: 280px;
     position: relative;
     border-radius: 15px;
     border: 0.5px white solid;
@@ -352,7 +352,7 @@
       width: 100%;
       height: auto;
       object-fit: cover;
-      height: 332px;
+      height: 280px;
       position: absolute;
       overflow: hidden;
       border-radius: 15px;
@@ -392,7 +392,7 @@
       margin-bottom: 20px;
       transition: all 0.6s ease;
       z-index: 1000;
-      transform: translate(0%, -160%);
+      transform: translate(0%, -280%);
       justify-content: center;
       font-size: 2vw;
     }
@@ -492,8 +492,8 @@
     .container {
       width: 100%;
       height: 100%;
-      max-width: 600px;
-      max-height: 600px;
+      max-width: 400px;
+      max-height: 400px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -504,8 +504,8 @@
   
     .cards {
       position: relative;
-      height: 500px;
-      width: 530px;
+      height: 400px;
+      width: 330px;
       margin: 0 auto 20px;
       perspective: 1000px;
       transform-style: preserve-3d;
@@ -514,7 +514,7 @@
   
     .cards label {
       position: absolute;
-      width: 530px;
+      width: 330px;
       margin: auto;
       cursor: pointer;
       transition: transform 0.55s ease;
@@ -523,9 +523,9 @@
   .cards .card {
     background-color: #151515;
     border-radius: 2rem; */
-    width: 426px;
+    width: 326px;
     display: inline-block;
-    height: 332px;
+    height: 232px;
     position: relative;
     border-radius: 15px;
     border: 0.5px white solid;
@@ -542,7 +542,7 @@
       width: 100%;
       height: auto;
       object-fit: cover;
-      height: 332px;
+      height: 232px;
       position: absolute;
       overflow: hidden;
       border-radius: 15px;
@@ -560,11 +560,7 @@
         23% 12%
       );
     }
-    
-    .card:hover {
-      transform: scale(1.05);
-      animation: glow-pulse infinite forwards;
-    }
+
   
     .card .infos {
       display: block;
@@ -582,26 +578,13 @@
       margin-bottom: 20px;
       transition: all 0.6s ease;
       z-index: 1000;
-      transform: translate(0%, -160%);
+      transform: translate(0%, -300%);
       justify-content: center;
       font-size: 2vw;
     }
   
-    @keyframes glow-pulse {
-      0% {
-          box-shadow: 0 0 10px rgba(255, 10, 226, 0.5);
-        }
-        50% {
-          filter: brightness(1.75);
-        }
-        100% {
-          box-shadow: 0 0 20px rgb(216, 42, 255);
-          filter: brightness(1.75);
-        }
-  }
-  
     .card .lorem {
-      font-size: 15.5px;
+      font-size: 13.5px;
       color: #eceaed;
       letter-spacing: 3px;
       display: none;
