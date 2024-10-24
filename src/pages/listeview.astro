@@ -1,8 +1,9 @@
 ---
-import "../styles/global.css";
 import Card from "../components/Card.astro";
 import Back from "../components/Button.astro";
 import MainLayout from "../layout/MainLayout.astro";
+import "../pages/Fonts/Warpen.otf";
+import "../pages/Fonts/Warpen.ttf";
 const key = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRoa3NsaGpvbGx0Zmd5YmtieW5oIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjg2MzUxMzAsImV4cCI6MjA0NDIxMTEzMH0.PdB3A9RoMZHik4jSgDicx6j1dUshJkVYhVKMvgRPmK0`;
 
 const artister = await fetch(
@@ -85,7 +86,6 @@ console.log(artister);
   h2 {
     display: flex;
     color: white;
-    font-family: Warpen, sans-serif;
     font-size: 30px;
     justify-content: center;
     margin-left: 300px;
@@ -127,5 +127,28 @@ console.log(artister);
     margin-bottom: 300px;
     display: flex;
     justify-content: center;
+  }
+</style>
+<style>
+  body {
+    background-color: black;
+    font-family:
+      Warpen,
+      sans serif;
+  }
+
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  @font-face {
+    font-family: "Warpen";
+    src:
+      url("../pages/Fonts/Warpen.otf") format("otf"),
+      url("../pages/Fonts/Warpen.ttf") format("ttf");
+    font-weight: normal;
+    font-style: normal;
   }
 </style>
