@@ -11,9 +11,9 @@ import "../styles/global.css";
           ><img
             class="circle"
             src="./Images/home1.png"
-            alt="navbar_logo"
-            width="40px"
-            height="40px"
+            alt="navbar_logo" 
+            width="30px"
+            height="30px"
           />HOME</a
         >
       </li>
@@ -23,8 +23,8 @@ import "../styles/global.css";
             class="circle"
             src="./Images/microphone.png"
             alt="navbar_logo"
-            width="40px"
-            height="40px"
+            width="30px"
+            height="30px"
           />LINE-UP</a
         >
       </li>
@@ -34,27 +34,25 @@ import "../styles/global.css";
             class="circle"
             src="./Images/newspaper.png"
             alt="navbar_logo"
-            width="40px"
-            height="40px"
+            width="30px"
+            height="30px"
           />NEWS</a
         >
       </li>
-      <li class="nav-item">
+      <li class="nav-item login-item">
         <a href="teknik.html" class="nav-link"
           ><img
             class="circle"
             src="./Images/user.png"
             alt="navbar_logo"
-            width="40px"
-            height="40px"
+            width="30px"
+            height="30px"
           />LOGIN</a
         >
       </li>
     </ul>
     <div class="hamburger">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
+   <img src="./Images/burgermenuhvid.png" alt="burgermenu">
     </div>
   </nav>
   <script src="../pages/burger.js"></script>
@@ -64,14 +62,19 @@ import "../styles/global.css";
   .circle {
     background-color: #d9d9d9;
     border-radius: 50%;
-    margin-right: 10px;
-    padding: 3px 3px;
+    margin-right: 25px;
+        display: flex; /* Gør cirklen til en flex-container */
   }
+
+  .circle img {
+    width: 20px; /* Juster denne værdi for at ændre bredden af billederne */
+    height: 20px; /* Juster denne værdi for at ændre højden af billederne */
+    object-fit: contain; /* Sørger for, at billederne bevarer deres proportioner */
+}
+
   ul {
     list-style: none;
     height: auto;
-    background-color: #f59dff;
-    border-radius: 1rem;
     align-items: center;
     display: flex;
     width: 100%;
@@ -86,7 +89,7 @@ import "../styles/global.css";
   }
 
   ul li a:hover {
-    background: #ae6cff;
+    color: #ae6cff;
     width: 80%;
     border-radius: 1rem;
   }
@@ -96,6 +99,7 @@ import "../styles/global.css";
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1.5rem;
+    
   }
 
   .bar {
@@ -112,19 +116,35 @@ import "../styles/global.css";
     display: none;
     cursor: pointer;
     margin-left: auto;
+    
   }
+
+  .hamburger img {
+  width: 25px; /* Juster denne værdi for at ændre bredden */
+  height: 25px; /* Juster denne værdi for at ændre højden */
+  object-fit: contain; /* Sørger for, at billedet bevarer sine proportioner */
+}
 
   .nav-menu {
     display: flex;
+        flex-direction: column; /* Vertikal orientering */
+            justify-content: flex-start; /* Sørg for, at de starter øverst */
+
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
   }
 
   .nav-link {
-    font-size: 1.6rem;
+    font-size: 1rem;
     font-weight: 400;
     color: #ffffff;
+        display: flex; /* Sørg for, at teksten og cirklen forbliver i en linje */
+    align-items: center; /* Centrér indholdet vertikalt */
+    padding: 10px 15px; /* Tilføj padding for at give klikområde */
+    transition: color 0.3s ease; /* Tilføj en overgangseffekt til farven */
+        white-space: nowrap; /* Forhindre tekstbrydning */
+
   }
 
   .nav-link:hover {
@@ -134,21 +154,22 @@ import "../styles/global.css";
   .nav-logo {
     font-size: 2.1rem;
     font-weight: 500;
-    color: #fff700;
     margin-left: 1.5rem;
   }
 
   .nav-menu {
     position: fixed;
-    right: -100%;
     top: 5rem;
+        right: -100%; /* Skjult til venstre for skærmen */
+
     flex-direction: column;
     background-color: rgba(48, 48, 48, 0.7);
-    width: 25%;
-    border-radius: 10px;
+    width: 15%;
+      height: 500px; /* Fast højde */
     text-align: center;
     transition: 0.3s;
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+  border: 1px solid white;
   }
 
   .nav-menu.active {
@@ -157,13 +178,19 @@ import "../styles/global.css";
 
   .nav-item {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     padding: 10px;
     margin: 0 20px 20px;
     border-bottom: solid 1px white;
-    width: 90%;
+    width: 76%;
   }
+
+  .login-item{
+        margin-top: auto; /* Skub login-elementet til bunden */
+            border-bottom: none; /* Fjern linjen for login-elementet */
+  }
+  
 
   .hamburger {
     display: block;
@@ -181,6 +208,7 @@ import "../styles/global.css";
   .hamburger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
+
 </style>
 
 <!-- <nav class="navbar">
