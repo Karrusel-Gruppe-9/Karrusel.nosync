@@ -2,8 +2,19 @@
 import "../styles/global.css";
 import Card from "../components/Card.astro";
 import Back from "../components/Button.astro";
-import Navigation from "../components/Navigation.astro";
 import MainLayout from "../layout/MainLayout.astro";
+const key = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRoa3NsaGpvbGx0Zmd5YmtieW5oIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjg2MzUxMzAsImV4cCI6MjA0NDIxMTEzMH0.PdB3A9RoMZHik4jSgDicx6j1dUshJkVYhVKMvgRPmK0`;
+
+const artister = await fetch(
+  "https://dhkslhjolltfgybkbynh.supabase.co/rest/v1/info",
+  {
+    method: "GET",
+    headers: {
+      apikey: key,
+    },
+  }
+).then((res) => res.json());
+const thursday = artister.filter((a) => a.scene === "Balkonen");
 ---
 
 <MainLayout>
@@ -21,20 +32,32 @@ import MainLayout from "../layout/MainLayout.astro";
   <div class="card-container">
     <div id="thursday" class="lineup-container">
       <img class="lineup-frame" src="./Images/cardsframe.png" alt="" />
-      <Card />
+      <ul class="grid-container">
+        {artister.map((artist) => <Card data={artist} />)}
+      </ul>
     </div>
     <div id="friday" class="lineup-container">
       <img class="lineup-frame" src="./Images/cardsframefriday.png" alt="" />
-      <Card />
+      <ul class="grid-container">
+        {artister.map((artist) => <Card data={artist} />)}
+      </ul>
     </div>
     <div id="saturday" class="lineup-container">
       <img class="lineup-frame" src="./Images/cardsframesaturday.png" alt="" />
-      <Card />
+      <ul class="grid-container">
+        {artister.map((artist) => <Card data={artist} />)}
+      </ul>
     </div>
   </div>
 </MainLayout>
 
 <style>
+  .grid-container {
+    margin-top: 10%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 100px;
+  }
   .back-button {
     display: flex;
     left: 0;
@@ -52,7 +75,7 @@ import MainLayout from "../layout/MainLayout.astro";
     margin: 0;
     font-family: Warpen, sans-serif;
     color: #ba33ff;
-    font-size: 70px;
+    font-size: 90px;
   }
 
   h2 {
@@ -82,7 +105,7 @@ import MainLayout from "../layout/MainLayout.astro";
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 50px;
+    gap: 30px;
     margin-top: 0px;
   }
 

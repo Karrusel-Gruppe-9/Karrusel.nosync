@@ -15,4 +15,7 @@ export async function getStaticPaths() {
     props: {artist}, // send al data med som props
   }));
 }
+
+const {artist} = Astro.props;
+console.log(artist);
 ---
