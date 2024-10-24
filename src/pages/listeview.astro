@@ -14,7 +14,11 @@ const artister = await fetch(
     },
   }
 ).then((res) => res.json());
-const thursday = artister.filter((a) => a.scene === "Balkonen");
+const getThursday = artister.filter((a) => a.dag === "torsdag");
+const getFriday = artister.filter((a) => a.dag === "Fredag");
+const getSaturday = artister.filter((a) => a.dag === "Lørdag");
+
+console.log(artister);
 ---
 
 <MainLayout>
@@ -33,19 +37,19 @@ const thursday = artister.filter((a) => a.scene === "Balkonen");
     <div id="thursday" class="lineup-container">
       <img class="lineup-frame" src="./Images/cardsframe.png" alt="" />
       <ul class="grid-container">
-        {artister.map((artist) => <Card data={artist} />)}
+        {getThursday.map((artist) => <Card data={artist} />)}
       </ul>
     </div>
     <div id="friday" class="lineup-container">
       <img class="lineup-frame" src="./Images/cardsframefriday.png" alt="" />
       <ul class="grid-container">
-        {artister.map((artist) => <Card data={artist} />)}
+        {getFriday.map((artist) => <Card data={artist} />)}
       </ul>
     </div>
     <div id="saturday" class="lineup-container">
       <img class="lineup-frame" src="./Images/cardsframesaturday.png" alt="" />
       <ul class="grid-container">
-        {artister.map((artist) => <Card data={artist} />)}
+        {getSaturday.map((artist) => <Card data={artist} />)}
       </ul>
     </div>
   </div>

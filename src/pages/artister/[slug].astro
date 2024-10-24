@@ -1,4 +1,11 @@
 ---
+import "../../styles/global.css";
+import MainLayout from "../../layout/MainLayout.astro";
+import Back from "../../components/Buttons/Back.astro";
+import Artistinfo from "../../components/Artistinfo.astro";
+import Artistvideo from "../../components/Artistvideo.astro";
+import Artistbottom from "../../components/Artistbottom.astro";
+
 export async function getStaticPaths() {
   const url = "https://dhkslhjolltfgybkbynh.supabase.co/rest/v1/info";
   const options = {
@@ -9,13 +16,96 @@ export async function getStaticPaths() {
   };
 
   const artister = await fetch(url, options).then((res) => res.json());
-
   return artister.map((artist) => ({
     params: {slug: artist.slug}, // [artist]=artist.slug
-    props: {artist}, // send al data med som props
+    props: {
+      artist,
+    }, // send al data med som props
   }));
 }
 
 const {artist} = Astro.props;
 console.log(artist);
 ---
+
+<MainLayout>
+  <div class="headline">
+    <div class="back-button">
+      <Back />
+    </div>
+    <h1>ARTIST</h1>
+  </div>
+  <div class="artist-container">
+    <h2>{artist.artist}</h2>
+    <img class="artist-pic-frame" src={artist.img} alt={artist.img} />
+  </div>
+  <Artistinfo />
+  <Artistvideo />
+  <Artistbottom />
+</MainLayout>
+
+<style>
+  .back-button {
+    display: flex;
+    left: 0;
+    position: absolute;
+    margin: 30px;
+  }
+  .headline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  h1 {
+    color: white;
+    margin: 0;
+    font-family: Warpen, sans-serif;
+    color: #ba33ff;
+    font-size: 90px;
+  }
+
+  h2 {
+    color: white;
+    font-family: Warpen, sans-serif;
+    font-size: 55px;
+    text-align: center;
+    display: block;
+    top: -7%;
+    position: absolute;
+    z-index: 1000;
+  }
+
+  .artist-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin-top: 150px;
+    position: relative;
+  }
+
+  .artist-pic-frame {
+    position: absolute;
+    max-width: 100%;
+    height: auto;
+    width: 1200px;
+    height: 700px;
+    margin-top: 0;
+
+    clip-path: polygon(
+      85% 0,
+      94% 0,
+      100% 5%,
+      100% 100%,
+      0 100%,
+      0 0,
+      14% 0,
+      21% 13%,
+      78% 13%
+    );
+  }
+  img {
+    max-width: 100%;
+  }
+</style>
