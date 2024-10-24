@@ -11,14 +11,14 @@ import "../styles/global.css";
           ><img
             class="circle"
             src="./Images/home1.png"
-            alt="navbar_logo" 
+            alt="navbar_logo"
             width="30px"
             height="30px"
           />HOME</a
         >
       </li>
       <li class="nav-item">
-        <a href="spil.html" class="nav-link"
+        <a href="./listeview.html" class="nav-link"
           ><img
             class="circle"
             src="./Images/microphone.png"
@@ -52,7 +52,7 @@ import "../styles/global.css";
       </li>
     </ul>
     <div class="hamburger">
-   <img src="./Images/burgermenuhvid.png" alt="burgermenu">
+      <img src="./Images/burgermenuhvid.png" alt="burgermenu" />
     </div>
   </nav>
   <script src="../pages/burger.js"></script>
@@ -63,14 +63,14 @@ import "../styles/global.css";
     background-color: #d9d9d9;
     border-radius: 50%;
     margin-right: 25px;
-        display: flex; /* Gør cirklen til en flex-container */
+    display: flex; /* Gør cirklen til en flex-container */
   }
 
   .circle img {
     width: 20px; /* Juster denne værdi for at ændre bredden af billederne */
     height: 20px; /* Juster denne værdi for at ændre højden af billederne */
     object-fit: contain; /* Sørger for, at billederne bevarer deres proportioner */
-}
+  }
 
   ul {
     list-style: none;
@@ -99,7 +99,6 @@ import "../styles/global.css";
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1.5rem;
-    
   }
 
   .bar {
@@ -116,19 +115,18 @@ import "../styles/global.css";
     display: none;
     cursor: pointer;
     margin-left: auto;
-    
   }
 
   .hamburger img {
-  width: 25px; /* Juster denne værdi for at ændre bredden */
-  height: 25px; /* Juster denne værdi for at ændre højden */
-  object-fit: contain; /* Sørger for, at billedet bevarer sine proportioner */
-}
+    width: 25px; /* Juster denne værdi for at ændre bredden */
+    height: 25px; /* Juster denne værdi for at ændre højden */
+    object-fit: contain; /* Sørger for, at billedet bevarer sine proportioner */
+  }
 
   .nav-menu {
     display: flex;
-        flex-direction: column; /* Vertikal orientering */
-            justify-content: flex-start; /* Sørg for, at de starter øverst */
+    flex-direction: column; /* Vertikal orientering */
+    justify-content: flex-start; /* Sørg for, at de starter øverst */
 
     justify-content: space-between;
     align-items: center;
@@ -139,12 +137,11 @@ import "../styles/global.css";
     font-size: 1rem;
     font-weight: 400;
     color: #ffffff;
-        display: flex; /* Sørg for, at teksten og cirklen forbliver i en linje */
+    display: flex; /* Sørg for, at teksten og cirklen forbliver i en linje */
     align-items: center; /* Centrér indholdet vertikalt */
     padding: 10px 15px; /* Tilføj padding for at give klikområde */
     transition: color 0.3s ease; /* Tilføj en overgangseffekt til farven */
-        white-space: nowrap; /* Forhindre tekstbrydning */
-
+    white-space: nowrap; /* Forhindre tekstbrydning */
   }
 
   .nav-link:hover {
@@ -160,16 +157,16 @@ import "../styles/global.css";
   .nav-menu {
     position: fixed;
     top: 5rem;
-        right: -100%; /* Skjult til venstre for skærmen */
+    right: -100%; /* Skjult til venstre for skærmen */
 
     flex-direction: column;
     background-color: rgba(48, 48, 48, 0.7);
     width: 15%;
-      height: 500px; /* Fast højde */
+    height: 500px; /* Fast højde */
     text-align: center;
     transition: 0.3s;
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-  border: 1px solid white;
+    border: 1px solid white;
   }
 
   .nav-menu.active {
@@ -186,11 +183,10 @@ import "../styles/global.css";
     width: 76%;
   }
 
-  .login-item{
-        margin-top: auto; /* Skub login-elementet til bunden */
-            border-bottom: none; /* Fjern linjen for login-elementet */
+  .login-item {
+    margin-top: auto; /* Skub login-elementet til bunden */
+    border-bottom: none; /* Fjern linjen for login-elementet */
   }
-  
 
   .hamburger {
     display: block;

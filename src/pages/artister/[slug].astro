@@ -1,7 +1,8 @@
 ---
+// @ts-nocheck
 import "../../styles/global.css";
 import MainLayout from "../../layout/MainLayout.astro";
-import Back from "../../components/Buttons/Back.astro";
+import Back from "../../components/Back.astro";
 import Artistinfo from "../../components/Artistinfo.astro";
 import Artistvideo from "../../components/Artistvideo.astro";
 import Artistbottom from "../../components/Artistbottom.astro";
@@ -17,14 +18,14 @@ export async function getStaticPaths() {
 
   const artister = await fetch(url, options).then((res) => res.json());
   return artister.map((artist) => ({
-    params: {slug: artist.slug}, // [artist]=artist.slug
+    params: { slug: artist.slug }, // [artist]=artist.slug
     props: {
       artist,
     }, // send al data med som props
   }));
 }
 
-const {artist} = Astro.props;
+const { artist } = Astro.props;
 console.log(artist);
 ---
 
